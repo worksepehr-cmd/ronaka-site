@@ -1,64 +1,100 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-black text-white">
+      <main className="mx-auto max-w-6xl px-6 py-20">
+        {/* Top bar */}
+        <header className="flex items-center justify-between">
+          <div className="text-sm tracking-[0.35em] uppercase text-white/70">
+            RONAKA
+          </div>
+          <a
+            href="#contact"
+            className="rounded-full border border-white/20 px-4 py-2 text-sm text-white/90 hover:border-white/40"
+          >
+            همکاری
+          </a>
+        </header>
+
+        {/* Hero */}
+        <section className="mt-16 grid gap-10 md:grid-cols-12 md:items-center">
+          <div className="md:col-span-7">
+            <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
+              نوری برای مدیای شما
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-white/70">
+              تولید ویدیوهای High-End با ترکیب خلاقیت، موشن و سیستم‌های هوشمند.
+              خروجی تمیز، سریع و قابل اتکا برای برندهایی که معمولی نمی‌خوان.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#work"
+                className="rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black hover:bg-white/90"
+              >
+                دیدن نمونه‌کارها
+              </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-white/20 px-6 py-3 text-center text-sm font-medium text-white hover:border-white/40"
+              >
+                شروع همکاری
+              </a>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-3 text-xs text-white/50">
+              <span className="rounded-full border border-white/10 px-3 py-1">
+                AI Video
+              </span>
+              <span className="rounded-full border border-white/10 px-3 py-1">
+                Hybrid Editing
+              </span>
+              <span className="rounded-full border border-white/10 px-3 py-1">
+                Motion Design
+              </span>
+              <span className="rounded-full border border-white/10 px-3 py-1">
+                Creative Automation
+              </span>
+            </div>
+          </div>
+
+          {/* Preview Card (placeholder for video later) */}
+          <div className="md:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.14),transparent_60%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.10),transparent_55%)]" />
+
+              <div className="relative flex h-full flex-col justify-between p-6">
+                <div className="text-xs tracking-[0.3em] uppercase text-white/60">
+                  Featured Reel
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-sm text-white/70">
+                  اینجا بعداً ویدیوی Reel یا یک تصویر شاخص میاد (با لینک از هاست
+                  ویدیو).
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sections anchors */}
+        <section id="work" className="mt-24">
+          <h2 className="text-xl font-semibold">نمونه‌کارها</h2>
+          <p className="mt-3 text-white/60">
+            فعلاً این بخش اسکلتشه. بعداً پروژه‌ها رو اینجا لیست می‌کنیم.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+        </section>
+
+        <section id="contact" className="mt-20 border-t border-white/10 pt-10">
+          <h2 className="text-xl font-semibold">شروع همکاری</h2>
+          <p className="mt-3 text-white/60">
+            برای همکاری، پیام بده:{" "}
+            <span className="text-white/90">work.sepehr@gmail.com</span>
+          </p>
+        </section>
+
+        <footer className="mt-16 text-xs text-white/40">
+          © {new Date().getFullYear()} RONAKA
+        </footer>
       </main>
     </div>
   );
