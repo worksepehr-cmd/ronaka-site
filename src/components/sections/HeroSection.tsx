@@ -12,5 +12,5 @@ export default async function HeroSection() {
   const dir = getDir(locale);
 
   // ارسال دیتا به کلاینت کامپوننت برای اجرای انیمیشن‌های GSAP
-  return <HeroCinematicClient dict={dict} dir={dir} />;
+  return <HeroCinematicClient />;
 }
