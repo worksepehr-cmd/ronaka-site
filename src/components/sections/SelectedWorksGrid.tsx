@@ -20,14 +20,23 @@ const cinematicDict = {
   en: {
     title: "Cinematic & AI Projects",
     category: "Cinematic & AI Media"
-  }, // 👈 این ویرگولِ جا مونده بود که اضافه شد!
+  },
   ar: {
     title: "المشاريع السينمائية والذكاء الاصطناعي",
     category: "الإنتاج السينمائي والذكاء الاصطناعي"
   }
 };
 
-export default function SelectedWorksGrid({ items, locale = "fa" }: { items: any[], locale?: string }) {
+// اضافه شدن اینترفیس دقیق برای تضمین سلامت داده‌ها
+export interface PortfolioItem {
+  id: string;
+  title: string;
+  category: string;
+  image: string;
+  link: string;
+}
+
+export default function SelectedWorksGrid({ items, locale = "fa" }: { items: PortfolioItem[], locale?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -56,7 +65,8 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: any
   
   const t = cinematicDict[locale as keyof typeof cinematicDict] || cinematicDict.fa;
 
-  const cinematicCard = items.length > 3 ? items[3] : {
+  // منطبق کردن کارت پیش‌فرض با اینترفیس
+  const cinematicCard: PortfolioItem = items.length > 3 ? items[3] : {
     id: "cinematic-teaser-default",
     title: t.title,
     category: t.category,
@@ -69,12 +79,10 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: any
       <div className="mx-auto mt-8 flex w-full max-w-7xl flex-col items-center gap-6 px-4 md:mt-12 md:gap-8 md:px-0">
         
         <div className="grid w-full grid-cols-1 place-items-center gap-6 md:grid-cols-3 md:gap-8">
-          {topCards.map((project: any) => (
+          {topCards.map((project: PortfolioItem) => (
             <Link
               key={project.id}
               href={project.link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
               className="gsap-card mx-auto block aspect-[9/16] w-full max-w-[360px] justify-self-center transition-all duration-700 ease-out group-hover/grid:opacity-40 group-hover/grid:scale-[0.97] hover:!z-50 hover:!scale-100 hover:!opacity-100 md:max-w-none"
             >
               <TiltedCard
@@ -107,8 +115,6 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: any
 
         <Link
           href={cinematicCard.link}
-          target="_blank"
-          rel="noopener noreferrer"
           className="gsap-card mx-auto block aspect-[16/9] w-full max-w-[360px] justify-self-center transition-all duration-700 ease-out group-hover/grid:opacity-40 group-hover/grid:scale-[0.97] hover:!z-50 hover:!scale-100 hover:!opacity-100 md:max-w-none"
         >
           <TiltedCard

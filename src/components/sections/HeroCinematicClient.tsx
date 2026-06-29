@@ -4,6 +4,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { MEDIA } from "@/config/media"; // 👈 فراخوانی فایل مدیریت مدیا
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +23,6 @@ export default function HeroCinematicClient() {
 
       let mm = gsap.matchMedia();
 
-      // منطق اسکرول فقط برای دسکتاپ
       mm.add("(min-width: 768px)", () => {
         let cleanup: (() => void) | undefined;
 
@@ -88,25 +88,22 @@ export default function HeroCinematicClient() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[100vh] md:h-[300vh] bg-[#0F1117]">
-      {/* با حذف شدن overflow-x-hidden از بادی، 
-        حالا position: sticky با قدرت تمام کار می‌کنه 
-      */}
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
         
-        {/* ویدیوی دسکتاپ */}
+        {/* 👈 ویدیوهای دسکتاپ (اتصال به فایل Config) */}
         <video
           ref={desktopVideoRef}
           className="absolute top-0 left-0 h-full w-full object-cover hidden md:block"
           muted
           playsInline
           preload="auto"
-          poster="/videos/hero-poster.jpg"
+          poster={MEDIA.hero.desktop.poster}
         >
-          <source src="/videos/hero-cinematic.mp4" type="video/mp4" />
-          <source src="/videos/hero-cinematic.webm" type="video/webm" />
+          <source src={MEDIA.hero.desktop.mp4} type="video/mp4" />
+          <source src={MEDIA.hero.desktop.webm} type="video/webm" />
         </video>
 
-        {/* ویدیوی موبایل */}
+        {/* 👈 ویدیوهای موبایل (اتصال به فایل Config) */}
         <video
           className="absolute top-0 left-0 h-full w-full object-cover block md:hidden"
           autoPlay
@@ -114,10 +111,10 @@ export default function HeroCinematicClient() {
           muted
           playsInline
           preload="auto"
-          poster="/videos/hero-mobile-poster.jpg"
+          poster={MEDIA.hero.mobile.poster}
         >
-          <source src="/videos/hero-mobile.mp4" type="video/mp4" />
-          <source src="/videos/hero-mobile.webm" type="video/webm" />
+          <source src={MEDIA.hero.mobile.mp4} type="video/mp4" />
+          <source src={MEDIA.hero.mobile.webm} type="video/webm" />
         </video>
 
       </div>

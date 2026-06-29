@@ -3,11 +3,12 @@ import localFont from "next/font/local";
 import { cookies } from "next/headers";
 import "./globals.css";
 
-// ایمپورت کامپوننت‌های موشن
+// ایمپورت کامپوننت‌های موشن و لی‌آوت
 import LanguageGate from "@/components/ui/LanguageGate";
 import PageReveal from "@/components/ui/PageReveal";
+import Header from "@/components/layout/Header"; // 👈 اضافه شد
+import Footer from "@/components/layout/Footer"; // 👈 اضافه شد
 
-// لود فونت‌ها با آدرس‌های دقیق
 const nightbor = localFont({
   src: "../fonts/en/Nightbor.woff2",
   variable: "--font-nightbor",
@@ -21,8 +22,33 @@ const doran = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Ronaka Studio",
-  description: "Premium Creative Studio",
+  metadataBase: new URL('https://ronakastudio.ir'),
+  title: "Ronaka Studio | Premium AI & Cinematic Media",
+  description: "استودیوی خلاق روناکا؛ خلق تجربه‌های بصری سینمایی، هویت برند لوکس و تولید محتوای مبتنی بر هوش مصنوعی.",
+  keywords: ["Ronaka Studio", "روناکا", "تولید محتوای سینمایی", "هوش مصنوعی", "هویت برند", "Cinematic Media", "AI Visual Production"],
+  authors: [{ name: "Ronaka Studio" }],
+  openGraph: {
+    type: "website",
+    locale: "fa_IR",
+    url: "https://ronakastudio.ir",
+    title: "Ronaka Studio | Premium Creative Studio",
+    description: "استودیوی خلاق روناکا؛ خلق تجربه‌های بصری سینمایی، هویت برند لوکس و تولید محتوای مبتنی بر هوش مصنوعی.",
+    siteName: "Ronaka Studio",
+    images: [
+      {
+        url: "/images/og-poster.jpg", 
+        width: 1200,
+        height: 630,
+        alt: "Ronaka Studio Cinematic Showreel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ronaka Studio | Premium AI & Cinematic Media",
+    description: "استودیوی خلاق روناکا؛ خلق تجربه‌های بصری سینمایی، هویت برند لوکس و تولید محتوای مبتنی بر هوش مصنوعی.",
+    images: ["/images/og-poster.jpg"],
+  },
 };
 
 export default async function RootLayout({
@@ -39,14 +65,17 @@ export default async function RootLayout({
       <body
         className={`bg-[#0F1117] text-[#ededed] antialiased ${nightbor.variable} ${doran.variable} ${isRtl ? 'font-fa' : 'font-en'}`}
       >
-        
-        {/* ۱. دروازه ورود سینمایی (بالاترین لایه) */}
         <LanguageGate />
         
-        {/* ۲. محتوای سایت (رپر PageReveal وظیفه نمایان کردن نرم سایت را دارد) */}
         <PageReveal>
-          {/* تگ main از اینجا حذف شد چون در page.tsx وجود دارد */}
-          {children}
+        <Header locale={locale} />
+          
+          <main className="flex min-h-screen flex-col">
+            {children}
+          </main>
+          
+          {/* 👈 فوتر در پایین‌ترین قسمت محتوا قرار می‌گیرد */}
+          <Footer locale={locale} />
         </PageReveal>
         
       </body>

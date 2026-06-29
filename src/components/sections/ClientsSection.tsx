@@ -1,8 +1,7 @@
-import fs from 'fs';
-import path from 'path';
 import LogoLoop from '@/components/ui/LogoLoop';
 import { cookies } from "next/headers";
 import { DEFAULT_LOCALE, type Locale } from "@/lib/i18n/dictionary";
+import { MEDIA } from "@/config/media"; // 👈 فراخوانی فایل مرکزی مدیا
 
 // دیکشنری محلی برای این سکشن
 const dict = {
@@ -16,21 +15,8 @@ export default async function ClientsSection() {
   const locale = (cookieStore.get("locale")?.value ?? DEFAULT_LOCALE) as Locale;
   const text = dict[locale] || dict.fa;
 
-  const logosDir = path.join(process.cwd(), 'public', 'clients');
-  let clientLogos: any[] = [];
-
-  try {
-    const files = fs.readdirSync(logosDir);
-    clientLogos = files
-      .filter(file => file.endsWith('.png') || file.endsWith('.webp'))
-      .map(file => ({
-        id: file,
-        src: `/clients/${file}`,
-        alt: file.split('.')[0],
-      }));
-  } catch (error) {
-    console.warn("Folder 'public/clients' not found or empty.");
-  }
+  // 👈 خواندن لیست لوگوها مستقیماً از فایل کانفیگ (بدون نیاز به پکیج fs سرور)
+  const clientLogos = MEDIA.clients;
 
   if (clientLogos.length === 0) return null;
 

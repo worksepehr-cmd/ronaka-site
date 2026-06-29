@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import { DEFAULT_LOCALE, getDir, type Locale } from "@/lib/i18n/dictionary";
-import SelectedWorksGrid from "./SelectedWorksGrid"; // ایمپورت گرید تعاملی
+import SelectedWorksGrid from "./SelectedWorksGrid";
 
 async function getProjectsDict(locale: Locale) {
   try {
@@ -19,7 +19,7 @@ export default async function SelectedWorkSection() {
   const data = await getProjectsDict(locale);
 
   return (
-    <section dir={dir} className="w-full overflow-x-clip bg-[#0F1117] px-4 py-24 sm:px-8 lg:px-12 lg:py-32"> {/* 👈 فقط این کلمه تغییر کرد */}
+    <section id="portfolio" dir={dir} className="scroll-mt-32 w-full overflow-x-clip bg-[#0F1117] px-4 py-24 sm:px-8 lg:px-12 lg:py-32">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center text-center">
         
         {/* هدر سکشن */}

@@ -14,7 +14,6 @@ export default function Home() {
       <SelectedWorkSection />
       
       {/* ۳. سکشن لوگوی مشتریان */}
-      {/* @ts-expect-error Async Server Component */}
       <ClientsSection />
       
       {/* ۴. سکشن قابلیت‌ها */}
