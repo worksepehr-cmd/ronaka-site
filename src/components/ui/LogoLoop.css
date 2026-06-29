@@ -1,0 +1,39 @@
+.logoloop {
+  position: relative;
+  --logoloop-gap: 40px; /* فاصله بین لوگوها */
+}
+.logoloop__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  z-index: 0;
+}
+.logoloop__list {
+  display: flex;
+  align-items: center;
+}
+.logoloop__item {
+  flex: 0 0 auto;
+  margin-right: var(--logoloop-gap);
+  line-height: 1;
+}
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%; /* محو شدن لبه‌های نوار به سمت تاریکی سایت */
+  pointer-events: none;
+  z-index: 10;
+}
+.logoloop--fade::before {
+  left: 0;
+  background: linear-gradient(to right, #0F1117 0%, transparent 100%);
+}
+.logoloop--fade::after {
+  right: 0;
+  background: linear-gradient(to left, #0F1117 0%, transparent 100%);
+}

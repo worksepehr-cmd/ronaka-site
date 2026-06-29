@@ -1,0 +1,221 @@
+
+@import "tailwindcss";
+
+/* =========================
+   RONAKA — Global Tokens
+   Tailwind v4 via @theme inline
+   ========================= */
+
+:root {
+  /* ===== Base (Dark Cinematic) ===== */
+  --background: #0f1117;
+  --foreground: #ededed;
+
+  /* ===== Brand ===== */
+  --royal-blue: #2563eb;
+  --deep-purple: #7c3aed;
+
+  /* ===== Glass ===== */
+  --glass-bg: rgba(15, 17, 23, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+
+  /* ===== Surfaces & Borders (برای رشد UI بدون تکه‌تکه شدن) ===== */
+  --surface-1: rgba(15, 17, 23, 0.78);  /* کارت/پنل اصلی */
+  --surface-2: rgba(255, 255, 255, 0.04); /* hover/secondary */
+  --surface-3: rgba(255, 255, 255, 0.06); /* elevated subtle */
+  --border: rgba(255, 255, 255, 0.10);
+
+  /* ===== Accent (Primary action) ===== */
+  --accent: var(--royal-blue);
+  --on-accent: #ffffff;
+
+  /* ===== Shadows (Cinematic) ===== */
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.18);
+  --shadow-hover: 0 18px 50px rgba(0, 0, 0, 0.25);
+
+  /* ===== Radius ===== */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 20px;
+  --radius-xl: 24px;
+
+  /* ===== Focus Ring ===== */
+  --ring: rgba(37, 99, 235, 0.55); /* بر اساس brand blue */
+
+  /* ===== Motion Tokens ===== */
+  --ease-tech: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 180ms;
+  --dur-base: 380ms;
+  --dur-slow: 700ms;
+}
+
+/* اگر بعداً خواستی theme light هم داشته باشی، آماده است (فعلاً اختیاری)
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --foreground: #0f1117;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(15, 17, 23, 0.10);
+    --surface-1: rgba(255, 255, 255, 0.90);
+    --surface-2: rgba(15, 17, 23, 0.04);
+    --surface-3: rgba(15, 17, 23, 0.06);
+    --border: rgba(15, 17, 23, 0.12);
+    --shadow-soft: 0 10px 30px rgba(15, 17, 23, 0.10);
+    --shadow-hover: 0 18px 50px rgba(15, 17, 23, 0.14);
+  }
+}
+*/
+
+/* =========================
+   Tailwind v4 Theme Mapping
+   ========================= */
+@theme inline {
+  /* Base */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand */
+  --color-brand-blue: var(--royal-blue);
+  --color-brand-purple: var(--deep-purple);
+
+  /* UI surfaces */
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+
+  /* Accent */
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+
+  /* Radius (اگر دوست داشتی در کامپوننت‌ها مصرف کنی) */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  /* Fonts (با layout.tsx شما هماهنگ) */
+  --font-en: var(--font-english), sans-serif;
+  --font-fa: var(--font-persian), sans-serif;
+}
+
+/* =========================
+   Base Styles
+   ========================= */
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* اگر smooth scroll نمی‌خوای، حذفش کن */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+
+  /* جلوگیری از اسکرول افقی */
+  overflow-x: hidden;
+
+  /* رندر بهتر متن */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* تجربه بهتر در موبایل */
+  text-rendering: optimizeLegibility;
+}
+
+/* انتخاب متن */
+::selection {
+  background: rgba(37, 99, 235, 0.35);
+}
+
+/* احترام به Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================
+   Utilities
+   ========================= */
+@layer utilities {
+  /* ---- Glass Panel (Primitive اصلی) ---- */
+  .glass-panel {
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* ---- Surface primitives ---- */
+  .surface-1 {
+    background-color: var(--surface-1);
+    border: 1px solid var(--border);
+  }
+  .surface-2 {
+    background-color: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+
+  /* ---- Motion primitives (سیستمی، یک‌دست) ---- */
+  .motion-fast {
+    transition-duration: var(--dur-fast);
+    transition-timing-function: var(--ease-tech);
+  }
+  .motion-base {
+    transition-duration: var(--dur-base);
+    transition-timing-function: var(--ease-tech);
+  }
+  .motion-slow {
+    transition-duration: var(--dur-slow);
+    transition-timing-function: var(--ease-tech);
+  }
+
+  /* ---- Focus ring استاندارد ---- */
+  .focus-ring {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+
+  /* ---- Elevation shadows ---- */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  /* ---- Optional: Hide scrollbar for cinematic sections ---- */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+}
+
+/* =========================
+   Components Layer (اختیاری)
+   اگر بخوای الگوهای تکراری مثل Button/Card رو به CSS utility نزدیک کنی
+   ========================= */
+/* @layer components {} */
+/* افکت Film Grain سینمایی */
+.bg-noise {
+  position: relative;
+}
+
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* تا مزاحم کلیک‌ها نشود */
+  z-index: 10; /* قرارگیری روی ویدیو */
+  background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.15%22/%3E%3C/svg%3E');
+  mix-blend-mode: overlay; /* ترکیب نرم نویز با تصویر */
+  opacity: 0.5; /* تنظیم شدت نویز */
+}

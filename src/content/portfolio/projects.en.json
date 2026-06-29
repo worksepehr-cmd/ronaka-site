@@ -1,0 +1,33 @@
+{
+  "section": {
+    "badge": "Portfolio",
+    "title": "Selected Works",
+    "subtitle": "A glimpse into our digital craftsmanship and cinematic approach."
+  },
+  "items": [
+    {
+      "id": "project-01",
+      "title": "Nova Intelligence",
+      "category": "Mobile App UI",
+      "image": "/images/projects/p1.jpg",
+      "link": "/work/nova-intelligence",
+      "orientation": "vertical" 
+    },
+    {
+      "id": "project-02",
+      "title": "Aura E-Commerce",
+      "category": "Social Campaign",
+      "image": "/images/projects/p2.jpg",
+      "link": "/work/aura-ecommerce",
+      "orientation": "vertical"
+    },
+    {
+      "id": "project-03",
+      "title": "Nexus Financial",
+      "category": "Web Dashboard",
+      "image": "/images/projects/p3.jpg",
+      "link": "/work/nexus-financial",
+      "orientation": "horizontal"
+    }
+  ]
+}
