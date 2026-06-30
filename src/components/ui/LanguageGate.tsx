@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
-import Orb from "./Orb"; 
-import LightRays from "./LightRays"; 
+import Orb from "./Orb";
+import LightRays from "./LightRays";
 
 const LOCALES = [
   { code: "fa", label: "فارسی", fontClass: "font-doran" },
@@ -12,41 +12,52 @@ const LOCALES = [
 ];
 
 export default function LanguageGate() {
-  const [hasLocaleCookie, setHasLocaleCookie] = useState(true);
+  // به صورت پیش‌فرض true می‌گذاریم تا موقع لود اولیه صفحه پرش نداشته باشیم
+  const [shouldHideGate, setShouldHideGate] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
   const [isPending, startTransition] = useTransition();
-  const [isMobile, setIsMobile] = useState(false); 
+  const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    const cookie = document.cookie.includes("locale=");
-    if (!cookie) {
-      setHasLocaleCookie(false);
+    // ۱. تشخیص عرض صفحه برای نمایش افکت موبایل یا دسکتاپ
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    // ۲. هسته اصلی هوش UX: تشخیص رفرش یا سرچ جدید
+    const navEntries = performance.getEntriesByType("navigation");
+    const isReload = navEntries.length > 0 && (navEntries[0] as PerformanceNavigationTiming).type === "reload";
+    const hasPassedGate = sessionStorage.getItem("gatePassed");
+
+    if (isReload || hasPassedGate) {
+      // اگر کاربر صفحه را رفرش کرده یا در این تب قبلاً بوده -> دروازه مخفی بماند
+      setShouldHideGate(true);
+    } else {
+      // اگر کاربر دامنه را سرچ کرده یا تب جدید باز کرده -> دروازه ظاهر شود
+      setShouldHideGate(false);
     }
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
-    };
-    
-    handleResize(); 
-    window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (hasLocaleCookie) return null;
+  if (shouldHideGate) return null;
 
   const handleSelect = (localeCode: string) => {
     setIsExiting(true);
     window.dispatchEvent(new Event("gate-exiting"));
 
     setTimeout(() => {
-      // 👈 تغییر اصلی: حذف max-age. الان این یک Session Cookie است.
-      document.cookie = `locale=${localeCode}; path=/`;
-      
+      // ۱. ذخیره در حافظه تب (برای اینکه با رفرش دوباره زبان نخواهد)
+      sessionStorage.setItem("gatePassed", "true");
+
+      // ۲. ذخیره زبان در کوکی ثابت (برای اینکه سرور همیشه زبان انتخابی را بداند)
+      document.cookie = `locale=${localeCode}; path=/; max-age=${60 * 60 * 24 * 365}`;
+
       startTransition(() => {
         router.refresh();
       });
-      setHasLocaleCookie(true);
+      setShouldHideGate(true);
     }, 800);
   };
 
@@ -56,22 +67,21 @@ export default function LanguageGate() {
         ${isExiting ? "scale-[3] opacity-0 blur-xl pointer-events-none" : "scale-100 opacity-100 blur-0"}
       `}
     >
-      {/* پس‌زمینه هوشمند بر اساس دستگاه */}
       <div className="absolute inset-0 z-0">
         {isMobile ? (
           <div className="w-full h-full opacity-100">
             <LightRays
-              raysOrigin="top-center"
-              raysColor="#ffffffff" 
+              raysOrigin="center"
+              raysColor="#530097ff"
               raysSpeed={0.7}
-              lightSpread={0.4}
+              lightSpread={1.4}
               rayLength={3}
-              followMouse={false} 
+              followMouse={false}
               noiseAmount={0.17}
-              distortion={0}
+              distortion={.2}
               pulsating={false}
               fadeDistance={50.6}
-              saturation={2.5}
+              saturation={1.5}
             />
           </div>
         ) : (

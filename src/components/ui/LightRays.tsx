@@ -21,6 +21,7 @@ const getAnchorAndDir = (origin: string, w: number, h: number) => {
     case 'bottom-left': return { anchor: [0, (1 + outside) * h], dir: [0, -1] };
     case 'bottom-center': return { anchor: [0.5 * w, (1 + outside) * h], dir: [0, -1] };
     case 'bottom-right': return { anchor: [w, (1 + outside) * h], dir: [0, -1] };
+    case 'center': return { anchor: [0.5 * w, 0.5 * h], dir: [0, 1] };
     default: return { anchor: [0.5 * w, -outside * h], dir: [0, 1] }; // "top-center"
   }
 };
