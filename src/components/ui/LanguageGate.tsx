@@ -1,103 +1,106 @@
 "use client";
 
-import { useEffect, useState, startTransition } from "react";
-import Orb from "@/components/ui/Orb";
+import { useEffect, useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
+import Orb from "./Orb"; 
+import LightRays from "./LightRays"; 
 
-type Locale = "en" | "fa" | "ar";
-
-const LOCALES: { key: Locale; label: string; sub: string; fontClass: string; glowColor: string }[] = [
-  { key: "en", label: "ENGLISH", sub: "", fontClass: "font-en", glowColor: "bg-brand-blue shadow-[0_0_15px_rgba(37,99,235,0.6)]" },
-  { key: "fa", label: "فارسی", sub: "", fontClass: "font-fa", glowColor: "bg-brand-purple shadow-[0_0_15px_rgba(124,58,237,0.6)]" },
-  { key: "ar", label: "العربية", sub: "", fontClass: "font-fa", glowColor: "bg-brand-blue shadow-[0_0_15px_rgba(37,99,235,0.6)]" },
+const LOCALES = [
+  { code: "fa", label: "فارسی", fontClass: "font-doran" },
+  { code: "en", label: "ENGLISH", fontClass: "font-nightbor" },
+  { code: "ar", label: "العربية", fontClass: "font-doran" },
 ];
-
-function getCookie(name: string) {
-  if (typeof document === "undefined") return null;
-  const m = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
-  return m ? decodeURIComponent(m[2]) : null;
-}
-
-function setCookie(name: string, value: string) {
-  const isProd = process.env.NODE_ENV === "production";
-  document.cookie = `${name}=${value}; path=/; max-age=31536000; SameSite=Lax${isProd ? "; Secure" : ""}`;
-}
 
 export default function LanguageGate() {
   const [hasLocaleCookie, setHasLocaleCookie] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const [isMobile, setIsMobile] = useState(false); 
   const router = useRouter();
 
   useEffect(() => {
-    const cookie = getCookie("locale");
+    const cookie = document.cookie.includes("locale=");
     if (!cookie) {
       setHasLocaleCookie(false);
     }
-  }, []);
 
-  const handleSelect = (localeKey: string) => {
-    setCookie("locale", localeKey);
-    setIsExiting(true); 
-    window.dispatchEvent(new Event("gate-exiting")); 
-
-    startTransition(() => {
-      router.refresh(); 
-    });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); 
+    };
     
-    setTimeout(() => {
-      setHasLocaleCookie(true); 
-    }, 800);
-  };
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (hasLocaleCookie) return null;
 
+  const handleSelect = (localeCode: string) => {
+    setIsExiting(true);
+    window.dispatchEvent(new Event("gate-exiting"));
+
+    setTimeout(() => {
+      // 👈 تغییر اصلی: حذف max-age. الان این یک Session Cookie است.
+      document.cookie = `locale=${localeCode}; path=/`;
+      
+      startTransition(() => {
+        router.refresh();
+      });
+      setHasLocaleCookie(true);
+    }, 800);
+  };
+
   return (
-    <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-[#0F1117] transition-opacity duration-[800ms] ease-in ${
-        isExiting ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
+    <div
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0F1117] transition-all duration-800 ease-in-out
+        ${isExiting ? "scale-[3] opacity-0 blur-xl pointer-events-none" : "scale-100 opacity-100 blur-0"}
+      `}
     >
-      <div 
-        className={`absolute inset-0 z-0 transition-all duration-[800ms] ease-in ${
-          isExiting ? "scale-[3] opacity-0" : "scale-100 opacity-40"
-        }`}
-      >
-        <Orb hue={320} hoverIntensity={0.9} backgroundColor="#1a1919ff" />
+      {/* پس‌زمینه هوشمند بر اساس دستگاه */}
+      <div className="absolute inset-0 z-0">
+        {isMobile ? (
+          <div className="w-full h-full opacity-100">
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#ffffffff" 
+              raysSpeed={0.7}
+              lightSpread={0.4}
+              rayLength={3}
+              followMouse={false} 
+              noiseAmount={0.17}
+              distortion={0}
+              pulsating={false}
+              fadeDistance={50.6}
+              saturation={2.5}
+            />
+          </div>
+        ) : (
+          <Orb hoverIntensity={0.9} rotateOnHover={true} hue={320} forceHoverState={false} />
+        )}
       </div>
 
-      <div 
-        className={`relative z-10 flex w-full flex-col items-center transition-all duration-[800ms] ease-in ${
-          isExiting ? "scale-[2.5] opacity-0 blur-xl pointer-events-none" : "scale-100 opacity-100"
-        }`}
-      >
-        <div className="font-en mb-3 text-center pl-[0.8em] text-3xl font-black tracking-[0.8em] text-white/90 drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] sm:text-4xl">
-          RONAKA
+      <div className="relative z-10 flex flex-col items-center gap-20 sm:gap-24">
+        <div className="flex flex-col items-center gap-2">
+          <span className="font-nightbor text-4xl sm:text-5xl font-bold tracking-[0.6em] text-white pl-[0.6em] text-center drop-shadow-lg">
+            RONAKA
+          </span>
+          <h2 className="font-nightbor text-xs sm:text-sm font-medium tracking-[0.4em] text-white/50 pl-[0.4em] text-center uppercase">
+            Select Your Region
+          </h2>
         </div>
 
-        <h2 className="mb-12 text-center pl-[0.3em] text-sm font-light tracking-[0.4em] text-white/50 sm:mb-20">
-          SELECT YOUR REGION
-        </h2>
-
-        <div className="relative z-10 flex w-full max-w-4xl flex-col items-center justify-center gap-4 px-4 sm:flex-row sm:gap-10">
-          {LOCALES.map((l) => (
+        <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+          {LOCALES.map((locale) => (
             <button
-              key={l.key}
-              onClick={() => handleSelect(l.key)}
-              className="group relative flex w-full flex-col items-center justify-center px-6 py-4 transition-all duration-500 sm:w-auto sm:px-8 sm:py-2"
+              key={locale.code}
+              onClick={() => handleSelect(locale.code)}
+              disabled={isPending || isExiting}
+              className="group relative flex flex-col items-center gap-3 px-8 py-4 sm:py-2 transition-transform duration-500 hover:scale-110 w-full sm:w-auto"
             >
-              <div className="absolute inset-0 scale-50 rounded-full bg-white/0 opacity-0 blur-md transition-all duration-500 group-hover:scale-150 group-hover:bg-white/15 group-hover:opacity-100" />
-              
-              <span className={`${l.fontClass} relative z-10 text-xl font-medium tracking-[0.1em] text-white/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-white`}>
-                {l.label}
+              <span className={`${locale.fontClass} text-lg sm:text-xl font-light tracking-[0.15em] text-white/70 transition-colors duration-300 group-hover:text-white uppercase`}>
+                {locale.label}
               </span>
-              
-              <span className="relative z-10 mt-2 text-[8px] tracking-[0.5em] text-white/40 transition-all duration-500 group-hover:-translate-y-1 group-hover:text-white/60 sm:text-[10px]">
-                {l.sub}
-              </span>
-
-              <div className="absolute bottom-0 left-1/2 h-[1px] w-0 max-w-[120px] -translate-x-1/2 transition-all duration-500 group-hover:w-full">
-                <div className={`h-full w-full ${l.glowColor} opacity-70 blur-[1px]`} />
-              </div>
+              <span className="h-[1px] w-0 bg-brand-purple transition-all duration-500 ease-out group-hover:w-full"></span>
             </button>
           ))}
         </div>
