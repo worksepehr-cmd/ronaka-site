@@ -1,33 +1,49 @@
 {
   "section": {
-    "badge": "نمونه کارها",
-    "title": "پروژه‌های منتخب",
-    "subtitle": "نگاهی به هنر دیجیتال و رویکرد سینمایی استودیو روناکا."
+    "badge": "منتخب آثار",
+    "title": "پروژه‌های برجسته",
+    "subtitle": "گزیده‌ای از شاهکارهای بصری استودیو روناکا که مرزهای هنر و تکنولوژی را جابه‌جا کرده‌اند."
   },
   "items": [
     {
-      "id": "project-01",
-      "title": "هوش مصنوعی نوا",
-      "category": "رابط کاربری موبایل",
-      "image": "/images/projects/p1.jpg",
-      "link": "/work/nova-intelligence",
-      "orientation": "vertical" 
+      "id": "post-production",
+      "title": "پروژه‌های تدوین",
+      "enTitle": "Post-Production",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/post-production.jpg",
+        "onlineVideoUrl": ""
+      }
     },
     {
-      "id": "project-02",
-      "title": "فروشگاه اینترنتی آئورا",
-      "category": "کمپین شبکه‌های اجتماعی",
-      "image": "/images/projects/p2.jpg",
-      "link": "/work/aura-ecommerce",
-      "orientation": "vertical"
+      "id": "ai-commercials",
+      "title": "تیزرهای هوش مصنوعی",
+      "enTitle": "AI Commercials",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/ai-commercials.jpg",
+        "onlineVideoUrl": ""
+      }
     },
     {
-      "id": "project-03",
-      "title": "سیستم مالی نکسوس",
-      "category": "داشبورد تحت وب",
-      "image": "/images/projects/p3.jpg",
-      "link": "/work/nexus-financial",
-      "orientation": "horizontal"
+      "id": "commercial-visuals",
+      "title": "تصاویر تبلیغاتی",
+      "enTitle": "Commercial Visuals",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/commercial-visuals.jpg",
+        "onlineVideoUrl": ""
+      }
+    },
+    {
+      "id": "cinematic",
+      "title": "پروژه‌های سینمایی",
+      "enTitle": "Cinematic Projects",
+      "layout": "horizontal",
+      "media": {
+        "localImage": "/images/projects/cinematic.jpg",
+        "onlineVideoUrl": ""
+      }
     }
   ]
 }

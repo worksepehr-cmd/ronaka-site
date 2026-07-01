@@ -1,33 +1,49 @@
 {
   "section": {
-    "badge": "Portfolio",
-    "title": "Selected Works",
-    "subtitle": "A glimpse into our digital craftsmanship and cinematic approach."
+    "badge": "Selected Works",
+    "title": "Featured Projects",
+    "subtitle": "A curated showcase of Ronaka Studio's visual masterpieces, pushing the boundaries of art and technology."
   },
   "items": [
     {
-      "id": "project-01",
-      "title": "Nova Intelligence",
-      "category": "Mobile App UI",
-      "image": "/images/projects/p1.jpg",
-      "link": "/work/nova-intelligence",
-      "orientation": "vertical" 
+      "id": "post-production",
+      "title": "Post-Production",
+      "enTitle": "Post-Production",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/post-production.jpg",
+        "onlineVideoUrl": ""
+      }
     },
     {
-      "id": "project-02",
-      "title": "Aura E-Commerce",
-      "category": "Social Campaign",
-      "image": "/images/projects/p2.jpg",
-      "link": "/work/aura-ecommerce",
-      "orientation": "vertical"
+      "id": "ai-commercials",
+      "title": "AI Commercials",
+      "enTitle": "AI Commercials",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/ai-commercials.jpg",
+        "onlineVideoUrl": ""
+      }
     },
     {
-      "id": "project-03",
-      "title": "Nexus Financial",
-      "category": "Web Dashboard",
-      "image": "/images/projects/p3.jpg",
-      "link": "/work/nexus-financial",
-      "orientation": "horizontal"
+      "id": "commercial-visuals",
+      "title": "Commercial Visuals",
+      "enTitle": "Commercial Visuals",
+      "layout": "vertical",
+      "media": {
+        "localImage": "/images/projects/commercial-visuals.jpg",
+        "onlineVideoUrl": ""
+      }
+    },
+    {
+      "id": "cinematic",
+      "title": "Cinematic Projects",
+      "enTitle": "Cinematic Projects",
+      "layout": "horizontal",
+      "media": {
+        "localImage": "/images/projects/cinematic.jpg",
+        "onlineVideoUrl": ""
+      }
     }
   ]
 }
