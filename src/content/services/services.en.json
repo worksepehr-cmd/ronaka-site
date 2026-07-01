@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "badge": "Studio Capabilities",
+    "title": "Ideas, Shaped Into Intelligent Visuals.",
+    "subtitle": "Ronaka Studio blends cinematic editing, AI production, and brand thinking to turn bold ideas into refined visual systems."
+  },
+  "items": [
+    {
+      "id": "ai-video",
+      "title": "AI Video Production",
+      "enTitle": "AI Video Production",
+      "desc": "Cinematic AI videos designed to tell your brand story with clarity, depth, and visual impact.",
+      "colSpan": "md:col-span-2",
+      "rowSpan": "md:row-span-2"
+    },
+    {
+      "id": "commercial",
+      "title": "Commercial Visuals",
+      "enTitle": "Commercial Visuals",
+      "desc": "Premium campaign visuals that make your brand feel distinctive, polished, and memorable.",
+      "colSpan": "md:col-span-1",
+      "rowSpan": "md:row-span-1"
+    },
+    {
+      "id": "vfx",
+      "title": "Editing & VFX",
+      "enTitle": "Editing & VFX",
+      "desc": "Professional editing, motion design, and visual effects for videos, campaigns, and branded content.",
+      "colSpan": "md:col-span-1",
+      "rowSpan": "md:row-span-1"
+    },
+    {
+      "id": "ai-agents",
+      "title": "AI Agents",
+      "enTitle": "AI Agents",
+      "desc": "Custom AI assistants built to understand your business and support customer interactions at scale.",
+      "colSpan": "md:col-span-1",
+      "rowSpan": "md:row-span-2"
+    },
+    {
+      "id": "automation",
+      "title": "Business Automation",
+      "enTitle": "Business Automation",
+      "desc": "Smart workflows that reduce manual work, save time, and help your team operate more efficiently.",
+      "colSpan": "md:col-span-2",
+      "rowSpan": "md:row-span-1"
+    }
+  ],
+  "floatingBtn": "Start a Project"
+}
