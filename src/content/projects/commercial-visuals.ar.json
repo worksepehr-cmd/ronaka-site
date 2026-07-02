@@ -1,0 +1,111 @@
+{
+  "page": {
+    "badge": "صور إعلانية",
+    "title": "صور جاهزة للحملات لعلامات متميزة",
+    "subtitle": "إضاءة سينمائية، تكوين بصري متقن، واتجاه فني فاخر يجعل المنتج عالقًا في ذهن الجمهور خلال ثوانٍ."
+  },
+  "gallery": [
+    {
+      "id": "p1",
+      "title": "مشهد علامة فاخرة",
+      "image": "/images/projects/commercial-1.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p2",
+      "title": "حملة منتج سينمائية",
+      "image": "/images/projects/commercial-2.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p3",
+      "title": "افتتاحية جمالية مينيمالية",
+      "image": "/images/projects/commercial-3.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p4",
+      "title": "بورتريه أزياء درامي",
+      "image": "/images/projects/commercial-4.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p5",
+      "title": "ستوري إعلاني فاخر",
+      "image": "/images/projects/commercial-5.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p6",
+      "title": "تكوين لايف ستايل للعلامة",
+      "image": "/images/projects/commercial-6.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p7",
+      "title": "مشهد منتج بإضاءة استوديو",
+      "image": "/images/projects/commercial-7.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p8",
+      "title": "حملة اجتماعية عمودية",
+      "image": "/images/projects/commercial-8.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p9",
+      "title": "غلاف هوية بصرية",
+      "image": "/images/projects/commercial-9.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p10",
+      "title": "افتتاحية إعلانية للعلامة",
+      "image": "/images/projects/commercial-10.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p11",
+      "title": "مشهد إطلاق منتج",
+      "image": "/images/projects/commercial-11.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p12",
+      "title": "ريلز إعلاني فاخر",
+      "image": "/images/projects/commercial-12.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p13",
+      "title": "بوستر منتج عصري",
+      "image": "/images/projects/commercial-13.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p14",
+      "title": "حملة بصرية للعلامة",
+      "image": "/images/projects/commercial-14.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p15",
+      "title": "ستوري أزياء سينمائي",
+      "image": "/images/projects/commercial-15.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p16",
+      "title": "بورتريه تجاري فاخر",
+      "image": "/images/projects/commercial-16.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p17",
+      "title": "إطار إعلاني عريض",
+      "image": "/images/projects/commercial-17.jpg",
+      "aspectRatio": "16/9"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "page": {
+    "badge": "Commercial Visuals",
+    "title": "Campaign-ready visuals for distinctive brands",
+    "subtitle": "Cinematic lighting, refined composition, and premium visual direction crafted to make products feel memorable within seconds."
+  },
+  "gallery": [
+    {
+      "id": "p1",
+      "title": "Luxury Brand Frame",
+      "image": "/images/projects/commercial-1.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p2",
+      "title": "Cinematic Product Campaign",
+      "image": "/images/projects/commercial-2.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p3",
+      "title": "Minimal Beauty Editorial",
+      "image": "/images/projects/commercial-3.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p4",
+      "title": "Dramatic Fashion Portrait",
+      "image": "/images/projects/commercial-4.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p5",
+      "title": "Premium Social Story",
+      "image": "/images/projects/commercial-5.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p6",
+      "title": "Branded Lifestyle Composition",
+      "image": "/images/projects/commercial-6.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p7",
+      "title": "Studio-Lit Product Visual",
+      "image": "/images/projects/commercial-7.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p8",
+      "title": "Vertical Social Campaign",
+      "image": "/images/projects/commercial-8.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p9",
+      "title": "Visual Identity Cover",
+      "image": "/images/projects/commercial-9.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p10",
+      "title": "Commercial Brand Editorial",
+      "image": "/images/projects/commercial-10.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p11",
+      "title": "Product Launch Frame",
+      "image": "/images/projects/commercial-11.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p12",
+      "title": "Luxury Commercial Reel",
+      "image": "/images/projects/commercial-12.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p13",
+      "title": "Modern Product Poster",
+      "image": "/images/projects/commercial-13.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p14",
+      "title": "Brand Visual Campaign",
+      "image": "/images/projects/commercial-14.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p15",
+      "title": "Cinematic Fashion Story",
+      "image": "/images/projects/commercial-15.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p16",
+      "title": "Premium Commercial Portrait",
+      "image": "/images/projects/commercial-16.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p17",
+      "title": "Wide Commercial Frame",
+      "image": "/images/projects/commercial-17.jpg",
+      "aspectRatio": "16/9"
+    }
+  ]
+}

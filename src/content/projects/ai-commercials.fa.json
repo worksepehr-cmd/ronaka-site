@@ -1,0 +1,73 @@
+{
+  "page": {
+    "badge": "تیزرهای هوش مصنوعی",
+    "title": "تیزرهای سینمایی ساخته‌شده با هوش مصنوعی",
+    "subtitle": "ترکیب ایده‌پردازی انسانی، کارگردانی بصری و ابزارهای مولد AI برای ساخت ویدیوهای تبلیغاتی که سریع‌تر، انعطاف‌پذیرتر و متفاوت‌تر دیده می‌شوند."
+  },
+  "gallery": [
+    {
+      "id": "ai-h1",
+      "title": "کمپین سینمایی جواهرات لومیر",
+      "client": "ویدیوی افقی ۱۶:۹",
+      "poster": "/images/projects/ai-h1.jpg",
+      "videoUrl": "",
+      "layout": "horizontal"
+    },
+    {
+      "id": "ai-h2",
+      "title": "تیزر معرفی محصول پریمیوم",
+      "client": "ویدیوی افقی ۱۶:۹",
+      "poster": "/images/projects/ai-h2.jpg",
+      "videoUrl": "",
+      "layout": "horizontal"
+    },
+    {
+      "id": "ai-v1",
+      "title": "ریلز فشن سورئال",
+      "client": "محتوای عمودی ۹:۱۶",
+      "poster": "/images/projects/ai-v1.jpg",
+      "videoUrl": "",
+      "layout": "vertical"
+    },
+    {
+      "id": "ai-v2",
+      "title": "شورتز عطر و حرکت سیالات",
+      "client": "محتوای عمودی ۹:۱۶",
+      "poster": "/images/projects/ai-v2.jpg",
+      "videoUrl": "",
+      "layout": "vertical"
+    },
+    {
+      "id": "ai-v3",
+      "title": "کمپین خودروهای آینده",
+      "client": "محتوای عمودی ۹:۱۶",
+      "poster": "/images/projects/ai-v3.jpg",
+      "videoUrl": "",
+      "layout": "vertical"
+    },
+    {
+      "id": "ai-v4",
+      "title": "ریلز معماری سایبرپانک",
+      "client": "محتوای عمودی ۹:۱۶",
+      "poster": "/images/projects/ai-v4.jpg",
+      "videoUrl": "",
+      "layout": "vertical"
+    },
+    {
+      "id": "ai-h3",
+      "title": "کانسپت فناوری نکسوس",
+      "client": "ویدیوی افقی ۱۶:۹",
+      "poster": "/images/projects/ai-h3.jpg",
+      "videoUrl": "",
+      "layout": "horizontal"
+    },
+    {
+      "id": "ai-h4",
+      "title": "مستند کوتاه درباره آینده AI",
+      "client": "ویدیوی افقی ۱۶:۹",
+      "poster": "/images/projects/ai-h4.jpg",
+      "videoUrl": "",
+      "layout": "horizontal"
+    }
+  ]
+}

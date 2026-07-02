@@ -1,0 +1,111 @@
+{
+  "page": {
+    "badge": "گالری تبلیغات تصویری",
+    "title": "تصاویر تبلیغاتی برای برندهای متمایز",
+    "subtitle": "روایت بصری محصول با نورپردازی سینمایی، ترکیب‌بندی دقیق و فضایی لوکس؛ برای برندهایی که می‌خواهند در چند ثانیه در ذهن مخاطب بمانند."
+  },
+  "gallery": [
+    {
+      "id": "p1",
+      "title": "سکانس برند لوکس",
+      "image": "/images/projects/commercial-1.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p2",
+      "title": "کمپین محصول سینمایی",
+      "image": "/images/projects/commercial-2.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p3",
+      "title": "ژورنال زیبایی مینیمال",
+      "image": "/images/projects/commercial-3.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p4",
+      "title": "پرتره فشن دراماتیک",
+      "image": "/images/projects/commercial-4.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p5",
+      "title": "استوری تبلیغاتی پریمیوم",
+      "image": "/images/projects/commercial-5.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p6",
+      "title": "ترکیب‌بندی لایف‌استایل برند",
+      "image": "/images/projects/commercial-6.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p7",
+      "title": "نمای محصول با نورپردازی استودیویی",
+      "image": "/images/projects/commercial-7.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p8",
+      "title": "کمپین عمودی شبکه‌های اجتماعی",
+      "image": "/images/projects/commercial-8.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p9",
+      "title": "کاور هویت بصری",
+      "image": "/images/projects/commercial-9.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p10",
+      "title": "ادیتوریال تبلیغاتی برند",
+      "image": "/images/projects/commercial-10.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p11",
+      "title": "سکانس لانچ محصول",
+      "image": "/images/projects/commercial-11.jpg",
+      "aspectRatio": "16/9"
+    },
+    {
+      "id": "p12",
+      "title": "ریلز تبلیغاتی لوکس",
+      "image": "/images/projects/commercial-12.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p13",
+      "title": "پوستر محصول مدرن",
+      "image": "/images/projects/commercial-13.jpg",
+      "aspectRatio": "1/1"
+    },
+    {
+      "id": "p14",
+      "title": "کمپین تصویری برند",
+      "image": "/images/projects/commercial-14.jpg",
+      "aspectRatio": "4/3"
+    },
+    {
+      "id": "p15",
+      "title": "استوری فشن سینمایی",
+      "image": "/images/projects/commercial-15.jpg",
+      "aspectRatio": "9/16"
+    },
+    {
+      "id": "p16",
+      "title": "پرتره تجاری پریمیوم",
+      "image": "/images/projects/commercial-16.jpg",
+      "aspectRatio": "3/4"
+    },
+    {
+      "id": "p17",
+      "title": "قاب تبلیغاتی عریض",
+      "image": "/images/projects/commercial-17.jpg",
+      "aspectRatio": "16/9"
+    }
+  ]
+}
