@@ -18,6 +18,7 @@ interface CinematicVideoGalleryProps {
   fontClass?: string;
   imageQuality?: number;
   priorityCount?: number;
+  instagramLabel?: string;
 }
 
 const clampImageQuality = (quality: number) => Math.min(95, Math.max(1, quality));
@@ -48,6 +49,7 @@ export default function CinematicVideoGallery({
   fontClass = "",
   imageQuality = 86,
   priorityCount = 0,
+  instagramLabel = "View on Instagram",
 }: CinematicVideoGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isMounted, setIsMounted] = useState(false);
@@ -243,7 +245,7 @@ export default function CinematicVideoGallery({
     rel="noopener noreferrer"
     className="mt-6 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-white/20"
   >
-    مشاهده در Instagram
+   {instagramLabel}
   </a>
 )}
       </div>
