@@ -1,4 +1,4 @@
-import HeroCinematicClient from "@/components/sections/HeroCinematicClient";
+import HeroCinematicWrapper from "@/components/sections/HeroCinematicWrapper";
 import SelectedWorkSection from "@/components/sections/SelectedWorkSection";
 import ClientsSection from "@/components/sections/ClientsSection";
 import CapabilitiesSection from "@/components/sections/CapabilitiesSection";
@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       
       {/* ۱. سکشن هیرو ویدیو */}
-      <HeroCinematicClient />
+      <HeroCinematicWrapper />
       
       {/* ۲. سکشن پروژه‌های منتخب */}
       <SelectedWorkSection />
