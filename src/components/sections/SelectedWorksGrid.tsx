@@ -30,6 +30,16 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: Por
 
   const isRtl = locale === "fa" || locale === "ar";
   const fontClass = isRtl ? "font-fa" : "font-en";
+  const getProjectHref = (id: string) => {
+  const comingSoonProjects = [
+    "cinematic",
+    "post-production",
+  ];
+
+  return comingSoonProjects.includes(id)
+    ? "/coming-soon"
+    : `/projects/${id}`;
+};
 
   useGSAP(() => {
     const cards = gsap.utils.toArray(".gsap-card");
@@ -62,7 +72,7 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: Por
         {verticalItems.map((item) => (
           <Link
             key={item.id}
-            href={`/projects/${item.id}`}
+            href={getProjectHref(item.id)}
             className="gsap-card mx-auto block w-full max-w-[360px] aspect-[9/16] transition-all duration-700 ease-out group-hover/grid:opacity-40 group-hover/grid:scale-[0.97] hover:!z-50 hover:!scale-100 hover:!opacity-100 md:max-w-none"
           >
             <TiltedCard
@@ -95,7 +105,7 @@ export default function SelectedWorksGrid({ items, locale = "fa" }: { items: Por
       {/* ردیف دوم: ۱ کارت افقی با نسبت ابعاد سینمایی واید (16:9) */}
       {horizontalItem && (
         <Link
-          href={`/projects/${horizontalItem.id}`}
+          href={getProjectHref(horizontalItem.id)}
           className="gsap-card mx-auto block aspect-[16/9] w-full max-w-[360px] justify-self-center transition-all duration-700 ease-out group-hover/grid:opacity-40 group-hover/grid:scale-[0.97] hover:!z-50 hover:!scale-100 hover:!opacity-100 md:max-w-none"
         >
           <TiltedCard
