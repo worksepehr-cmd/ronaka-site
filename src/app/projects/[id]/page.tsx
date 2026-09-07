@@ -53,7 +53,17 @@ export default async function ProjectCategoryPage({ params }: ProjectPageProps) 
         {id === "commercial-visuals" ? (
           <AppleMasonryGallery items={data.gallery} fontClass={fontClass} />
         ) : (
-          <CinematicVideoGallery items={data.gallery} fontClass={fontClass} />
+          <CinematicVideoGallery
+  items={data.gallery}
+  fontClass={fontClass}
+  instagramLabel={
+    locale === "fa"
+      ? "مشاهده در Instagram"
+      : locale === "ar"
+        ? "مشاهدة على Instagram"
+        : "View on Instagram"
+  }
+/>
         )}
 
       </div>
