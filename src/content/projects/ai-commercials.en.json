@@ -10,7 +10,7 @@
       "title": "Lumière Jewelry Cinematic Campaign",
       "client": "Horizontal 16:9 Video",
       "poster": "/images/projects/ai-h1.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -18,7 +18,7 @@
       "title": "Premium Product Intro Teaser",
       "client": "Horizontal 16:9 Video",
       "poster": "/images/projects/ai-h2.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -26,7 +26,7 @@
       "title": "Surreal Fashion Reel",
       "client": "Vertical 9:16 Content",
       "poster": "/images/projects/ai-v1.jpg",
-      "videoUrl": "",
+      "instagramUrl": "https://www.instagram.com/reel/DcYJ2-oCIGp/?stkn=MWNhamJ2cmdrbGhnaQ==",
       "layout": "vertical"
     },
     {
@@ -34,7 +34,7 @@
       "title": "Perfume & Fluid Motion Short",
       "client": "Vertical 9:16 Content",
       "poster": "/images/projects/ai-v2.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -42,7 +42,7 @@
       "title": "Future Mobility Campaign",
       "client": "Vertical 9:16 Content",
       "poster": "/images/projects/ai-v3.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -50,7 +50,7 @@
       "title": "Cyberpunk Architecture Reel",
       "client": "Vertical 9:16 Content",
       "poster": "/images/projects/ai-v4.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -58,7 +58,7 @@
       "title": "Nexus Technology Concept Film",
       "client": "Horizontal 16:9 Video",
       "poster": "/images/projects/ai-h3.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -66,7 +66,7 @@
       "title": "Short Documentary on the Future of AI",
       "client": "Horizontal 16:9 Video",
       "poster": "/images/projects/ai-h4.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     }
   ]

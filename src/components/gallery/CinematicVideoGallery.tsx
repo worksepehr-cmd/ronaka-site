@@ -9,7 +9,7 @@ export interface VideoGalleryItem {
   title: string;
   client: string;
   poster: string;
-  videoUrl?: string;
+  instagramUrl?: string;
   layout: "horizontal" | "vertical";
 }
 
@@ -35,7 +35,7 @@ const getFocusableElements = (container: HTMLElement | null) => {
 
   return Array.from(
     container.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), video[controls], [tabindex]:not([tabindex="-1"])',
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
     ),
   ).filter((element) => {
     const style = window.getComputedStyle(element);
@@ -223,16 +223,6 @@ export default function CinematicVideoGallery({
         className="mx-auto flex min-h-dvh w-full max-w-6xl flex-col items-center justify-center px-4 py-20 sm:px-8"
         onMouseDown={(event) => event.stopPropagation()}
       >
-        {selectedItem.videoUrl ? (
-          <video
-            src={selectedItem.videoUrl}
-            controls
-            autoPlay
-            playsInline
-            preload="metadata"
-            className="h-auto w-auto max-h-[calc(100dvh-9rem)] max-w-full rounded-2xl object-contain drop-shadow-[0_0_50px_rgba(255,255,255,0.1)]"
-          />
-        ) : (
           <Image
             src={selectedItem.poster}
             alt={selectedItem.title}
@@ -242,11 +232,20 @@ export default function CinematicVideoGallery({
             className="h-auto w-auto max-h-[calc(100dvh-9rem)] max-w-full rounded-2xl object-contain drop-shadow-[0_0_50px_rgba(255,255,255,0.1)]"
             sizes="100vw"
           />
-        )}
 
         <p className="mt-4 max-w-[min(92vw,56rem)] rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-center text-sm font-medium tracking-[0.16em] text-white shadow-2xl backdrop-blur-md sm:mt-6 sm:px-8 sm:py-3 sm:text-base">
           {selectedItem.title}
         </p>
+        {selectedItem.instagramUrl && (
+         <a
+    href={selectedItem.instagramUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-6 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition hover:bg-white/20"
+  >
+    مشاهده در Instagram
+  </a>
+)}
       </div>
     </div>
   ) : null;
@@ -256,7 +255,7 @@ export default function CinematicVideoGallery({
       <div className={`grid w-full grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4 ${fontClass}`}>
         {items.map((item, index) => {
           const isHorizontal = item.layout === "horizontal";
-          const hasVideo = Boolean(item.videoUrl);
+          const hasInstagram = Boolean(item.instagramUrl);
 
           return (
             <button
@@ -266,7 +265,7 @@ export default function CinematicVideoGallery({
               key={item.id}
               type="button"
               onClick={() => openLightbox(index)}
-              aria-label={`${hasVideo ? "Play video" : "View project"}: ${item.title}`}
+              aria-label={`${hasInstagram ? "View on Instagram" : "View project"}: ${item.title}`}
               className={`group relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left outline-none transition duration-500 motion-safe:hover:scale-[1.02] motion-safe:hover:shadow-[0_0_40px_rgba(255,255,255,0.12)] focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090A0F] sm:rounded-[1.5rem]
                 ${isHorizontal ? "col-span-2 aspect-[16/9]" : "col-span-1 aspect-[9/16]"}
               `}
@@ -285,7 +284,7 @@ export default function CinematicVideoGallery({
 
               <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-2xl backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:bg-white/20 sm:h-16 sm:w-16">
-                  {hasVideo ? (
+                  {hasInstagram ? (
                     <svg className="ml-0.5 h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z" />
                     </svg>

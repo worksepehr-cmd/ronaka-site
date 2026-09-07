@@ -10,7 +10,7 @@
       "title": "حملة سينمائية لمجوهرات لوميير",
       "client": "فيديو أفقي 16:9",
       "poster": "/images/projects/ai-h1.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -18,7 +18,7 @@
       "title": "تيزر تعريفي لمنتج فاخر",
       "client": "فيديو أفقي 16:9",
       "poster": "/images/projects/ai-h2.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -26,7 +26,7 @@
       "title": "ريل أزياء سريالي",
       "client": "محتوى عمودي 9:16",
       "poster": "/images/projects/ai-v1.jpg",
-      "videoUrl": "",
+      "instagramUrl": "https://www.instagram.com/reel/DcYJ2-oCIGp/?stkn=MWNhamJ2cmdrbGhnaQ==",
       "layout": "vertical"
     },
     {
@@ -34,7 +34,7 @@
       "title": "شورت عطور وحركة سوائل",
       "client": "محتوى عمودي 9:16",
       "poster": "/images/projects/ai-v2.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -42,7 +42,7 @@
       "title": "حملة تنقل المستقبل",
       "client": "محتوى عمودي 9:16",
       "poster": "/images/projects/ai-v3.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -50,7 +50,7 @@
       "title": "ريل عمارة السايبربانك",
       "client": "محتوى عمودي 9:16",
       "poster": "/images/projects/ai-v4.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "vertical"
     },
     {
@@ -58,7 +58,7 @@
       "title": "فيلم مفهوم نكسوس التقني",
       "client": "فيديو أفقي 16:9",
       "poster": "/images/projects/ai-h3.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     },
     {
@@ -66,7 +66,7 @@
       "title": "وثائقي قصير عن مستقبل الذكاء الاصطناعي",
       "client": "فيديو أفقي 16:9",
       "poster": "/images/projects/ai-h4.jpg",
-      "videoUrl": "",
+      "instagramUrl": "",
       "layout": "horizontal"
     }
   ]
