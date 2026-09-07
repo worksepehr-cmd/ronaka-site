@@ -45,7 +45,6 @@ type Locale = keyof typeof navDict;
 const LOCALES: Array<{ code: Locale; label: string; shortLabel: string }> = [
   { code: "fa", label: "فارسی", shortLabel: "FA" },
   { code: "en", label: "English", shortLabel: "EN" },
-  { code: "ar", label: "العربية", shortLabel: "AR" },
 ];
 
 function getSafeLocale(locale?: string): Locale {

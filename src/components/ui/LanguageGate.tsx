@@ -8,7 +8,6 @@ import LightRays from "./LightRays";
 const LOCALES = [
   { code: "fa", label: "فارسی", fontClass: "font-doran" },
   { code: "en", label: "ENGLISH", fontClass: "font-nightbor" },
-  { code: "ar", label: "العربية", fontClass: "font-doran" },
 ];
 
 export default function LanguageGate() {
